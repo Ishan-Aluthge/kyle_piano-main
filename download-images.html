@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Holiday Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .image-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .image-card h3 {
+            margin: 10px 0 5px 0;
+            color: #333;
+            font-size: 16px;
+        }
+        .download-btn {
+            background: #045C5A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+        }
+        .download-btn:hover {
+            background: #034847;
+        }
+        .download-all {
+            background: #C96304;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            display: block;
+            margin: 20px auto;
+        }
+        .download-all:hover {
+            background: #b55804;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌴 Kyle & Kylie Holidays - Sri Lankan Attractions Images</h1>
+    
+    <div class="instructions">
+        <h2>Instructions:</h2>
+        <ol>
+            <li>Right-click on each image and select "Save image as..."</li>
+            <li>Save them to: <code>public/images/</code> folder with the exact filenames shown</li>
+            <li>Or click the download button under each image</li>
+        </ol>
+        <button class="download-all" onclick="downloadAll()">Download All Images</button>
+    </div>
+
+    <div class="image-grid">
+        <!-- Images are embedded as base64 or external URLs -->
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3EBeach Aerial View%3C/text%3E%3C/svg%3E" alt="Holiday 1">
+            <h3>holiday1.jpg</h3>
+            <p>Beach aerial view with turquoise water</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday1.jpg')">Download Instructions</button>
+        </div>
+
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3EKitesurfing%3C/text%3E%3C/svg%3E" alt="Holiday 2">
+            <h3>holiday2.jpg</h3>
+            <p>Kitesurfing action shot</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday2.jpg')">Download Instructions</button>
+        </div>
+
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3EWhite Temple%3C/text%3E%3C/svg%3E" alt="Holiday 3">
+            <h3>holiday3.jpg</h3>
+            <p>White Buddhist temple</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday3.jpg')">Download Instructions</button>
+        </div>
+
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3ECoastal View%3C/text%3E%3C/svg%3E" alt="Holiday 4">
+            <h3>holiday4.jpg</h3>
+            <p>Aerial coastal view with beaches</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday4.jpg')">Download Instructions</button>
+        </div>
+
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3ETraditional Dancer%3C/text%3E%3C/svg%3E" alt="Holiday 5">
+            <h3>holiday5.jpg</h3>
+            <p>Traditional Sri Lankan dancer</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday5.jpg')">Download Instructions</button>
+        </div>
+
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3EBeach Relaxation%3C/text%3E%3C/svg%3E" alt="Holiday 6">
+            <h3>holiday6.jpg</h3>
+            <p>Woman relaxing on beach rocks</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday6.jpg')">Download Instructions</button>
+        </div>
+
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3EElephants Bathing%3C/text%3E%3C/svg%3E" alt="Holiday 7">
+            <h3>holiday7.jpg</h3>
+            <p>Elephants bathing in river</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday7.jpg')">Download Instructions</button>
+        </div>
+
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3ESri Lankan Flag%3C/text%3E%3C/svg%3E" alt="Holiday 8">
+            <h3>holiday8.jpg</h3>
+            <p>Woman with Sri Lankan flag on beach</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday8.jpg')">Download Instructions</button>
+        </div>
+
+        <div class="image-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23045C5A' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' fill='white' font-size='20' text-anchor='middle' dy='.3em'%3ETrain Bridge%3C/text%3E%3C/svg%3E" alt="Holiday 9">
+            <h3>holiday9.jpg</h3>
+            <p>Train on historic bridge</p>
+            <button class="download-btn" onclick="alert('Right-click the image above and Save As: holiday9.jpg')">Download Instructions</button>
+        </div>
+    </div>
+
+    <script>
+        function downloadAll() {
+            alert('Please save the images you provided earlier to the public/images/ folder with these exact names:\n\n' +
+                  '1. holiday1.jpg - Beach aerial\n' +
+                  '2. holiday2.jpg - Kitesurfing\n' +
+                  '3. holiday3.jpg - White temple\n' +
+                  '4. holiday4.jpg - Coastal aerial\n' +
+                  '5. holiday5.jpg - Traditional dancer\n' +
+                  '6. holiday6.jpg - Woman on beach\n' +
+                  '7. holiday7.jpg - Elephants bathing\n' +
+                  '8. holiday8.jpg - Sri Lankan flag\n' +
+                  '9. holiday9.jpg - Train on bridge\n\n' +
+                  'The carousel is already configured to use these images!');
+        }
+    </script>
+</body>
+</html>
