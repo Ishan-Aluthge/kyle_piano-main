@@ -131,6 +131,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
+    /* Prevent layout shift during page transitions */
+    overflow-x: hidden;
   }
   .font-bookman {
     font-family: var(--font-bookman);
@@ -153,6 +155,16 @@ body {
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Global smooth transitions for all interactive elements */
+  a, button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Image loading transitions */
+  img {
+    transition: opacity 0.3s ease-in-out;
   }
 }
 
@@ -490,4 +502,246 @@ body {
 
 .delay-500 {
   animation-delay: 0.5s;
+}
+
+/* Enhanced Smooth Animations for the whole website */
+@keyframes smoothFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes smoothSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes smoothSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes smoothSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes smoothSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes smoothZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes smoothRotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes smoothBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes smoothPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+/* Smooth Animation Classes */
+.smooth-fade-in {
+  animation: smoothFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.smooth-slide-up {
+  animation: smoothSlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.smooth-slide-down {
+  animation: smoothSlideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.smooth-slide-left {
+  animation: smoothSlideLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.smooth-slide-right {
+  animation: smoothSlideRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.smooth-zoom-in {
+  animation: smoothZoomIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.smooth-rotate-in {
+  animation: smoothRotateIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.smooth-bounce {
+  animation: smoothBounce 2s ease-in-out infinite;
+}
+
+.smooth-pulse {
+  animation: smoothPulse 3s ease-in-out infinite;
+}
+
+/* Delay utilities for stagger effects */
+.animation-delay-75 {
+  animation-delay: 75ms;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+.animation-delay-225 {
+  animation-delay: 225ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-375 {
+  animation-delay: 375ms;
+}
+
+.animation-delay-450 {
+  animation-delay: 450ms;
+}
+
+.animation-delay-525 {
+  animation-delay: 525ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1.5s;
+}
+
+.animation-delay-2500 {
+  animation-delay: 2.5s;
+}
+
+/* Smooth hover transitions */
+.smooth-hover-scale {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.smooth-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth page transitions */
+.page-transition {
+  animation: smoothFadeIn 0.5s ease-in-out;
+}
+
+/* Intersection Observer Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-zoom.active {
+  opacity: 1;
+  transform: scale(1);
 }

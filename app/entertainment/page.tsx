@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { PageTransition } from "@/components/page-transition"
 import { Music, Users, Mic2, Radio, Calendar, Award, Star, Sparkles, Zap, Play, ArrowRight, CheckCircle, Trophy, Headphones } from "lucide-react"
 
 export default function EntertainmentPage() {
@@ -30,8 +31,9 @@ export default function EntertainmentPage() {
   }, [])
 
   return (
-    <div className="min-h-screen" style={{ margin: 0, padding: 0 }}>
-      <Navigation />
+    <PageTransition>
+      <div className="min-h-screen" style={{ margin: 0, padding: 0 }}>
+        <Navigation />
       
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
@@ -299,6 +301,7 @@ export default function EntertainmentPage() {
 
       <ContactSection />
       <Footer />
-    </div>
+      </div>
+    </PageTransition>
   )
 }

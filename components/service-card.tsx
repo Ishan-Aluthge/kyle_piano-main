@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
+import { motion } from "framer-motion"
 
 interface ServiceCardProps {
   title: string
@@ -41,7 +42,11 @@ export function ServiceCard({ title, description, href, color }: ServiceCardProp
 
   return (
     <Link href={href} className="block group h-full">
-      <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ease-out transform hover:scale-[1.02] h-full flex flex-col">
+      <motion.div
+        whileHover={{ scale: 1.02, y: -5 }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 h-full flex flex-col"
+      >
         {/* Hero Image with Overlay */}
         <div className="relative h-56 w-full overflow-hidden flex-shrink-0">
           <Image
@@ -100,7 +105,7 @@ export function ServiceCard({ title, description, href, color }: ServiceCardProp
 
         {/* Decorative Corner Accent */}
         <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl ${config.gradient} opacity-50 blur-2xl -z-0 group-hover:opacity-70 transition-opacity duration-500`}></div>
-      </div>
+      </motion.div>
     </Link>
   )
 }

@@ -2,9 +2,13 @@
 
 import { useEffect } from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { PageTransition } from "@/components/page-transition"
+import { AnimatedSection } from "@/components/animated-section"
+import { StaggerContainer, StaggerItem } from "@/components/stagger-container"
 import { MapPin, Users, Clock, Heart, Mountain, Waves, CheckCircle2, Star, Compass, Shield, Award, Plane, Calendar, ArrowRight } from "lucide-react"
 
 export default function HolidaysPage() {
@@ -70,21 +74,21 @@ export default function HolidaysPage() {
       title: "Cultural Highlights",
       description: "Sigiriya, Dambulla, Kandy, Yala, and the south coast",
       duration: "7-10 Days",
-      image: "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80",
+      image: "/images/sigiriya.png",
       price: "From $1,599"
     },
     {
       title: "Wildlife Adventure",
       description: "Safari in Yala, whale watching in Mirissa, hiking in Knuckles",
       duration: "8-12 Days",
-      image: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&q=80",
+      image: "/images/holiday6.png",
       price: "From $1,899"
     },
     {
       title: "Heritage Journey",
       description: "Ancient cities of Anuradhapura, Polonnaruwa, and Kandy",
       duration: "6-8 Days",
-      image: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&q=80",
+      image: "/images/holiday4.png",
       price: "From $1,399"
     },
     {
@@ -97,8 +101,9 @@ export default function HolidaysPage() {
   ]
 
   return (
-    <div className="min-h-screen" style={{ margin: 0, padding: 0 }}>
-      <Navigation />
+    <PageTransition>
+      <div className="min-h-screen" style={{ margin: 0, padding: 0 }}>
+        <Navigation />
       
       {/* Hero Section */}
       <section id="home" className="relative bg-gradient-to-br from-[#F6F6F6] via-white to-[#F6F6F6] py-20 md:py-32 -mt-20 pt-32 md:pt-44">
@@ -232,163 +237,196 @@ export default function HolidaysPage() {
           </div>
 
           {/* Main Customization Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {/* Travel Style */}
-            <div className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl hover:bg-white/15 hover:scale-105 transition-all duration-300 scroll-animate">
-              <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
-                Step 1
-              </div>
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Users className="w-8 h-8" />
-              </div>
-              <h3 className="font-bold text-2xl mb-3">Choose Your Travel Style</h3>
-              <p className="text-white/80 mb-4">Whether you travel solo, as a couple, or in a group — the choice is entirely yours.</p>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Solo adventures for self-discovery
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Romantic escapes for couples
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Family and group expeditions
-                </li>
-              </ul>
-            </div>
+          <StaggerContainer staggerDelay={0.1}>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {/* Travel Style */}
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl h-full"
+                  whileHover={{ y: -8, scale: 1.03, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
+                    Step 1
+                  </div>
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Users className="w-8 h-8" />
+                  </div>
+                  <h3 className="font-bold text-2xl mb-3">Choose Your Travel Style</h3>
+                  <p className="text-white/80 mb-4">Whether you travel solo, as a couple, or in a group — the choice is entirely yours.</p>
+                  <ul className="space-y-2 text-sm text-white/70">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Solo adventures for self-discovery
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Romantic escapes for couples
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Family and group expeditions
+                    </li>
+                  </ul>
+                </motion.div>
+              </StaggerItem>
 
-            {/* Transportation */}
-            <div className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl hover:bg-white/15 hover:scale-105 transition-all duration-300 scroll-animate delay-100">
-              <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
-                Step 2
-              </div>
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Plane className="w-8 h-8" />
-              </div>
-              <h3 className="font-bold text-2xl mb-3">Select Your Transport</h3>
-              <p className="text-white/80 mb-4">Travel in comfort and style with your preferred mode of transportation.</p>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Private air-conditioned vehicles
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Luxury vans for groups
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Adventure-style options
-                </li>
-              </ul>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl h-full"
+                  whileHover={{ y: -8, scale: 1.03, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
+                    Step 2
+                  </div>
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Plane className="w-8 h-8" />
+                  </div>
+                  <h3 className="font-bold text-2xl mb-3">Select Your Transport</h3>
+                  <p className="text-white/80 mb-4">Travel in comfort and style with your preferred mode of transportation.</p>
+                  <ul className="space-y-2 text-sm text-white/70">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Private air-conditioned vehicles
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Luxury vans for groups
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Adventure-style options
+                    </li>
+                  </ul>
+                </motion.div>
+              </StaggerItem>
 
-            {/* Accommodation */}
-            <div className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl hover:bg-white/15 hover:scale-105 transition-all duration-300 scroll-animate delay-200">
-              <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
-                Step 3
-              </div>
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Heart className="w-8 h-8" />
-              </div>
-              <h3 className="font-bold text-2xl mb-3">Pick Your Accommodation</h3>
-              <p className="text-white/80 mb-4">From charming boutique hotels to luxurious beach resorts — stay your way.</p>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Boutique heritage hotels
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  5-star luxury resorts
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Eco-lodges and homestays
-                </li>
-              </ul>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl h-full"
+                  whileHover={{ y: -8, scale: 1.03, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
+                    Step 3
+                  </div>
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Heart className="w-8 h-8" />
+                  </div>
+                  <h3 className="font-bold text-2xl mb-3">Pick Your Accommodation</h3>
+                  <p className="text-white/80 mb-4">From charming boutique hotels to luxurious beach resorts — stay your way.</p>
+                  <ul className="space-y-2 text-sm text-white/70">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Boutique heritage hotels
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      5-star luxury resorts
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Eco-lodges and homestays
+                    </li>
+                  </ul>
+                </motion.div>
+              </StaggerItem>
 
-            {/* Destinations */}
-            <div className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl hover:bg-white/15 hover:scale-105 transition-all duration-300 scroll-animate delay-300">
-              <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
-                Step 4
-              </div>
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MapPin className="w-8 h-8" />
-              </div>
-              <h3 className="font-bold text-2xl mb-3">Choose Your Destinations</h3>
-              <p className="text-white/80 mb-4">Explore the places that capture your imagination and curiosity.</p>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Ancient cultural cities
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Pristine coastal paradises
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Wildlife sanctuaries & hidden gems
-                </li>
-              </ul>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl h-full"
+                  whileHover={{ y: -8, scale: 1.03, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
+                    Step 4
+                  </div>
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <MapPin className="w-8 h-8" />
+                  </div>
+                  <h3 className="font-bold text-2xl mb-3">Choose Your Destinations</h3>
+                  <p className="text-white/80 mb-4">Explore the places that capture your imagination and curiosity.</p>
+                  <ul className="space-y-2 text-sm text-white/70">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Ancient cultural cities
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Pristine coastal paradises
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Wildlife sanctuaries & hidden gems
+                    </li>
+                  </ul>
+                </motion.div>
+              </StaggerItem>
 
-            {/* Activities */}
-            <div className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl hover:bg-white/15 hover:scale-105 transition-all duration-300 scroll-animate delay-400">
-              <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
-                Step 5
-              </div>
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Mountain className="w-8 h-8" />
-              </div>
-              <h3 className="font-bold text-2xl mb-3">Design Your Activities</h3>
-              <p className="text-white/80 mb-4">Create experiences that match your passion and energy level.</p>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Historical & cultural immersion
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Adventure sports & hiking
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Culinary tours & relaxation
-                </li>
-              </ul>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl h-full"
+                  whileHover={{ y: -8, scale: 1.03, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
+                    Step 5
+                  </div>
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Mountain className="w-8 h-8" />
+                  </div>
+                  <h3 className="font-bold text-2xl mb-3">Design Your Activities</h3>
+                  <p className="text-white/80 mb-4">Create experiences that match your passion and energy level.</p>
+                  <ul className="space-y-2 text-sm text-white/70">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Historical & cultural immersion
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Adventure sports & hiking
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Culinary tours & relaxation
+                    </li>
+                  </ul>
+                </motion.div>
+              </StaggerItem>
 
-            {/* Meals */}
-            <div className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl hover:bg-white/15 hover:scale-105 transition-all duration-300 scroll-animate delay-500">
-              <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
-                Step 6
-              </div>
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <h3 className="font-bold text-2xl mb-3">Savor Your Meals</h3>
-              <p className="text-white/80 mb-4">Enjoy dining experiences tailored to your tastes and dietary needs.</p>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Authentic Sri Lankan cuisine
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  International dining options
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
-                  Special dietary accommodations
-                </li>
-              </ul>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl h-full"
+                  whileHover={{ y: -8, scale: 1.03, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="absolute top-4 right-4 bg-[#8FB8B7] text-[#045C5A] px-3 py-1 rounded-full text-xs font-bold">
+                    Step 6
+                  </div>
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <CheckCircle2 className="w-8 h-8" />
+                  </div>
+                  <h3 className="font-bold text-2xl mb-3">Savor Your Meals</h3>
+                  <p className="text-white/80 mb-4">Enjoy dining experiences tailored to your tastes and dietary needs.</p>
+                  <ul className="space-y-2 text-sm text-white/70">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Authentic Sri Lankan cuisine
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      International dining options
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
+                      Special dietary accommodations
+                    </li>
+                  </ul>
+                </motion.div>
+              </StaggerItem>
             </div>
-          </div>
+          </StaggerContainer>
 
           {/* CTA Box */}
           <div className="bg-white/10 backdrop-blur-lg border-2 border-white/30 rounded-3xl p-10 text-center scroll-animate">
@@ -468,7 +506,7 @@ export default function HolidaysPage() {
                 At <strong>Kyle & Kylie Holidays</strong>, every journey is uniquely yours. Founded by Lakmal Weerakkoon, a licensed tour guide and former musician, we specialize in personalized Sri Lankan tours that match your style and interests.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                From romantic escapes to cultural explorations and thrilling natural adventures, we create unforgettable travel experiences — your trip, your way.
+                From romantic escapes to cultural explorations and thrilling natural adventures, we create unforgettable travel experiences your trip, your way.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -522,85 +560,123 @@ export default function HolidaysPage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all scroll-animate">
-              <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
-                <Compass className="w-8 h-8 text-[#045C5A]" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Island Discovery Solo Tour</h3>
-              <p className="text-gray-600 mb-4">
-                A balanced journey through Sri Lanka's must-see destinations — Sigiriya, Kandy, Ella, and the southern beaches — crafted for solo explorers who want to see it all at their own pace.
-              </p>
-              <a href="https://wa.me/94718661068?text=I'm interested in the Island Discovery Solo Tour" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
-                Learn More <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+          <StaggerContainer staggerDelay={0.1}>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
+                    <Compass className="w-8 h-8 text-[#045C5A]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Island Discovery Solo Tour</h3>
+                  <p className="text-gray-600 mb-4">
+                    A balanced journey through Sri Lanka's must-see destinations — Sigiriya, Kandy, Ella, and the southern beaches — crafted for solo explorers who want to see it all at their own pace.
+                  </p>
+                  <a href="https://wa.me/94718661068?text=I'm interested in the Island Discovery Solo Tour" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
+                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all scroll-animate delay-100">
-              <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
-                <Mountain className="w-8 h-8 text-[#045C5A]" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Adventure Solo Escape</h3>
-              <p className="text-gray-600 mb-4">
-                From hiking Adam's Peak to surfing in Weligama and safaris in Yala, this package is built for thrill-seekers ready to challenge themselves and embrace new adventures.
-              </p>
-              <a href="https://wa.me/94718661068?text=I'm interested in the Adventure Solo Escape" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
-                Learn More <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
+                    <Mountain className="w-8 h-8 text-[#045C5A]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Adventure Solo Escape</h3>
+                  <p className="text-gray-600 mb-4">
+                    From hiking Adam's Peak to surfing in Weligama and safaris in Yala, this package is built for thrill-seekers ready to challenge themselves and embrace new adventures.
+                  </p>
+                  <a href="https://wa.me/94718661068?text=I'm interested in the Adventure Solo Escape" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
+                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all scroll-animate delay-200">
-              <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
-                <Users className="w-8 h-8 text-[#045C5A]" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Cultural Immersion Solo Journey</h3>
-              <p className="text-gray-600 mb-4">
-                Experience Sri Lanka like a local. Join cooking classes, explore ancient cities with expert guides, take part in village walks, and connect with the island's rich heritage.
-              </p>
-              <a href="https://wa.me/94718661068?text=I'm interested in the Cultural Immersion Solo Journey" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
-                Learn More <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
+                    <Users className="w-8 h-8 text-[#045C5A]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Cultural Immersion Solo Journey</h3>
+                  <p className="text-gray-600 mb-4">
+                    Experience Sri Lanka like a local. Join cooking classes, explore ancient cities with expert guides, take part in village walks, and connect with the island's rich heritage.
+                  </p>
+                  <a href="https://wa.me/94718661068?text=I'm interested in the Cultural Immersion Solo Journey" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
+                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all scroll-animate delay-300">
-              <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
-                <Heart className="w-8 h-8 text-[#045C5A]" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Wellness & Mindfulness Retreat</h3>
-              <p className="text-gray-600 mb-4">
-                Ayurveda healing, meditation retreats, yoga sessions, and peaceful eco-stays designed to help solo travellers reset, relax, and rejuvenate.
-              </p>
-              <a href="https://wa.me/94718661068?text=I'm interested in the Wellness & Mindfulness Retreat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
-                Learn More <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
+                    <Heart className="w-8 h-8 text-[#045C5A]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Wellness & Mindfulness Retreat</h3>
+                  <p className="text-gray-600 mb-4">
+                    Ayurveda healing, meditation retreats, yoga sessions, and peaceful eco-stays designed to help solo travellers reset, relax, and rejuvenate.
+                  </p>
+                  <a href="https://wa.me/94718661068?text=I'm interested in the Wellness & Mindfulness Retreat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
+                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all scroll-animate delay-400">
-              <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
-                <Waves className="w-8 h-8 text-[#045C5A]" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Coastal Freedom Escape</h3>
-              <p className="text-gray-600 mb-4">
-                Travel along Sri Lanka's most beautiful beaches — Unawatuna, Mirissa, Arugam Bay, and Nilaveli. Perfect for sun-chasers and ocean lovers seeking a laid-back solo getaway.
-              </p>
-              <a href="https://wa.me/94718661068?text=I'm interested in the Coastal Freedom Escape" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
-                Learn More <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-16 h-16 bg-[#045C5A]/10 rounded-full flex items-center justify-center mb-6">
+                    <Waves className="w-8 h-8 text-[#045C5A]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Coastal Freedom Escape</h3>
+                  <p className="text-gray-600 mb-4">
+                    Travel along Sri Lanka's most beautiful beaches — Unawatuna, Mirissa, Arugam Bay, and Nilaveli. Perfect for sun-chasers and ocean lovers seeking a laid-back solo getaway.
+                  </p>
+                  <a href="https://wa.me/94718661068?text=I'm interested in the Coastal Freedom Escape" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
+                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="bg-gradient-to-br from-[#045C5A] to-[#034947] text-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all scroll-animate delay-500">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                <Star className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Custom Solo Travel Experience</h3>
-              <p className="text-white/90 mb-4">
-                Tell us your style — adventure, culture, relaxation, or a mix of everything — and we'll craft a personalized itinerary tailored just for you.
-              </p>
-              <a href="https://wa.me/94718661068?text=I want to create a custom solo travel experience" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-white font-semibold hover:underline">
-                Contact Us <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="bg-gradient-to-br from-[#045C5A] to-[#034947] text-white rounded-2xl p-8 shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
+                    <Star className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">Custom Solo Travel Experience</h3>
+                  <p className="text-white/90 mb-4">
+                    Tell us your style — adventure, culture, relaxation, or a mix of everything — and we'll craft a personalized itinerary tailored just for you.
+                  </p>
+                  <a href="https://wa.me/94718661068?text=I want to create a custom solo travel experience" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-white font-semibold hover:underline">
+                    Contact Us <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </motion.div>
+              </StaggerItem>
             </div>
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -619,61 +695,77 @@ export default function HolidaysPage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {couplePackages.slice(0, 3).map((pkg, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group scroll-animate flex flex-col" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image
-                    src={pkg.image}
-                    alt={pkg.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{pkg.title}</h3>
-                  <p className="text-gray-600 mb-4 flex-grow">{pkg.description}</p>
-                  <a
-                    href={`https://wa.me/94718661068?text=${encodeURIComponent(`I'm interested in the ${pkg.title} package`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full block text-center bg-[#045C5A] text-white px-6 py-3 rounded-lg hover:bg-[#034947] transition-colors font-semibold"
+          <StaggerContainer staggerDelay={0.12}>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {couplePackages.slice(0, 3).map((pkg, index) => (
+                <StaggerItem key={index} direction="up">
+                  <motion.div 
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg group flex flex-col h-full"
+                    whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                   >
-                    Book Now
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+                    <div className="relative h-64 w-full overflow-hidden">
+                      <Image
+                        src={pkg.image}
+                        alt={pkg.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{pkg.title}</h3>
+                      <p className="text-gray-600 mb-4 flex-grow">{pkg.description}</p>
+                      <a
+                        href={`https://wa.me/94718661068?text=${encodeURIComponent(`I'm interested in the ${pkg.title} package`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full block text-center bg-[#045C5A] text-white px-6 py-3 rounded-lg hover:bg-[#034947] transition-colors font-semibold"
+                      >
+                        Book Now
+                      </a>
+                    </div>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {couplePackages.slice(3).map((pkg, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group scroll-animate flex flex-col" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image
-                    src={pkg.image}
-                    alt={pkg.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{pkg.title}</h3>
-                  <p className="text-gray-600 mb-4 flex-grow">{pkg.description}</p>
-                  <a
-                    href={`https://wa.me/94718661068?text=${encodeURIComponent(`I'm interested in the ${pkg.title} package`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full block text-center bg-[#045C5A] text-white px-6 py-3 rounded-lg hover:bg-[#034947] transition-colors font-semibold"
+          <StaggerContainer staggerDelay={0.15}>
+            <div className="grid md:grid-cols-2 gap-8">
+              {couplePackages.slice(3).map((pkg, index) => (
+                <StaggerItem key={index} direction="up">
+                  <motion.div 
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg group flex flex-col h-full"
+                    whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                   >
-                    Book Now
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+                    <div className="relative h-64 w-full overflow-hidden">
+                      <Image
+                        src={pkg.image}
+                        alt={pkg.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{pkg.title}</h3>
+                      <p className="text-gray-600 mb-4 flex-grow">{pkg.description}</p>
+                      <a
+                        href={`https://wa.me/94718661068?text=${encodeURIComponent(`I'm interested in the ${pkg.title} package`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full block text-center bg-[#045C5A] text-white px-6 py-3 rounded-lg hover:bg-[#034947] transition-colors font-semibold"
+                      >
+                        Book Now
+                      </a>
+                    </div>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -692,36 +784,44 @@ export default function HolidaysPage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {groupPackages.map((pkg, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group scroll-animate flex flex-col" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="relative h-80 w-full overflow-hidden">
-                  <Image
-                    src={pkg.image}
-                    alt={pkg.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-3xl font-bold text-white mb-2">{pkg.title}</h3>
-                    <p className="text-white/90">{pkg.description}</p>
-                  </div>
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <a
-                    href={`https://wa.me/94718661068?text=${encodeURIComponent(`I'm interested in the ${pkg.title} tour`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full block text-center bg-[#045C5A] text-white px-6 py-3 rounded-lg hover:bg-[#034947] transition-colors font-semibold mt-auto"
+          <StaggerContainer staggerDelay={0.15}>
+            <div className="grid md:grid-cols-2 gap-8">
+              {groupPackages.map((pkg, index) => (
+                <StaggerItem key={index} direction="up">
+                  <motion.div 
+                    className="bg-gradient-to-br from-gray-50 to-white rounded-2xl overflow-hidden shadow-lg group flex flex-col h-full"
+                    whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                   >
-                    Book Now
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+                    <div className="relative h-80 w-full overflow-hidden">
+                      <Image
+                        src={pkg.image}
+                        alt={pkg.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <h3 className="text-3xl font-bold text-white mb-2">{pkg.title}</h3>
+                        <p className="text-white/90">{pkg.description}</p>
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <a
+                        href={`https://wa.me/94718661068?text=${encodeURIComponent(`I'm interested in the ${pkg.title} tour`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full block text-center bg-[#045C5A] text-white px-6 py-3 rounded-lg hover:bg-[#034947] transition-colors font-semibold mt-auto"
+                      >
+                        Book Now
+                      </a>
+                    </div>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -742,91 +842,129 @@ export default function HolidaysPage() {
           </div>
 
           {/* Main Benefits Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate hover:-translate-y-2">
-              <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Shield className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Licensed & Experienced</h3>
-              <p className="text-gray-600 text-center leading-relaxed mb-4">
-                Fully authorized Sri Lankan tour operator with comprehensive insurance coverage and 12+ years of proven track record in creating memorable journeys.
-              </p>
-              <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Government Certified</span>
-              </div>
-            </div>
+          <StaggerContainer staggerDelay={0.12}>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group bg-white p-10 rounded-3xl shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    <Shield className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Licensed & Experienced</h3>
+                  <p className="text-gray-600 text-center leading-relaxed mb-4">
+                    Fully authorized Sri Lankan tour operator with comprehensive insurance coverage and 12+ years of proven track record in creating memorable journeys.
+                  </p>
+                  <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Government Certified</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate delay-100 hover:-translate-y-2">
-              <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Heart className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">100% Personalized</h3>
-              <p className="text-gray-600 text-center leading-relaxed mb-4">
-                No two tours are the same. Every itinerary is meticulously crafted to match your unique interests, pace, preferences, and dreams for the perfect vacation.
-              </p>
-              <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Tailored Just for You</span>
-              </div>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group bg-white p-10 rounded-3xl shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    <Heart className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">100% Personalized</h3>
+                  <p className="text-gray-600 text-center leading-relaxed mb-4">
+                    No two tours are the same. Every itinerary is meticulously crafted to match your unique interests, pace, preferences, and dreams for the perfect vacation.
+                  </p>
+                  <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Tailored Just for You</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate delay-200 hover:-translate-y-2">
-              <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <MapPin className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Local Insider Knowledge</h3>
-              <p className="text-gray-600 text-center leading-relaxed mb-4">
-                Born and raised in Sri Lanka, we share authentic experiences, hidden gems, secret viewpoints, and local stories that guidebooks simply can't provide.
-              </p>
-              <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Authentic Experiences</span>
-              </div>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group bg-white p-10 rounded-3xl shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    <MapPin className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Local Insider Knowledge</h3>
+                  <p className="text-gray-600 text-center leading-relaxed mb-4">
+                    Born and raised in Sri Lanka, we share authentic experiences, hidden gems, secret viewpoints, and local stories that guidebooks simply can't provide.
+                  </p>
+                  <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Authentic Experiences</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate delay-300 hover:-translate-y-2">
-              <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Users className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Warm Hospitality</h3>
-              <p className="text-gray-600 text-center leading-relaxed mb-4">
-                We treat every traveler as family. Enjoy intimate group sizes, personal attention, and the genuine warmth of Sri Lankan hospitality throughout your journey.
-              </p>
-              <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Like Family</span>
-              </div>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group bg-white p-10 rounded-3xl shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    <Users className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Warm Hospitality</h3>
+                  <p className="text-gray-600 text-center leading-relaxed mb-4">
+                    We treat every traveler as family. Enjoy intimate group sizes, personal attention, and the genuine warmth of Sri Lankan hospitality throughout your journey.
+                  </p>
+                  <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Like Family</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate delay-400 hover:-translate-y-2">
-              <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Star className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">5-Star Rated Service</h3>
-              <p className="text-gray-600 text-center leading-relaxed mb-4">
-                Consistently rated excellent by travelers from around the world. Read our glowing reviews and see why visitors choose us again and again.
-              </p>
-              <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>500+ Happy Travelers</span>
-              </div>
-            </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group bg-white p-10 rounded-3xl shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    <Star className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">5-Star Rated Service</h3>
+                  <p className="text-gray-600 text-center leading-relaxed mb-4">
+                    Consistently rated excellent by travelers from around the world. Read our glowing reviews and see why visitors choose us again and again.
+                  </p>
+                  <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>500+ Happy Travelers</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
-            <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate delay-500 hover:-translate-y-2">
-              <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <CheckCircle2 className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Total Flexibility</h3>
-              <p className="text-gray-600 text-center leading-relaxed mb-4">
-                Easy booking process with flexible payment options, adjustable dates, customizable itineraries, and hassle-free modifications whenever needed.
-              </p>
-              <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Easy & Flexible</span>
-              </div>
+              <StaggerItem direction="up">
+                <motion.div 
+                  className="group bg-white p-10 rounded-3xl shadow-lg h-full"
+                  whileHover={{ y: -10, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    <CheckCircle2 className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Total Flexibility</h3>
+                  <p className="text-gray-600 text-center leading-relaxed mb-4">
+                    Easy booking process with flexible payment options, adjustable dates, customizable itineraries, and hassle-free modifications whenever needed.
+                  </p>
+                  <div className="flex items-center justify-center space-x-2 text-sm text-[#045C5A] font-semibold">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Easy & Flexible</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
             </div>
-          </div>
+          </StaggerContainer>
 
           {/* Testimonial Highlight Box */}
           {/* <div className="bg-gradient-to-br from-[#045C5A] to-[#034947] rounded-3xl p-12 text-white text-center scroll-animate">
@@ -888,14 +1026,14 @@ export default function HolidaysPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&q=80",
-              "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80",
-              "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
-              "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&q=80",
-              "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-              "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80",
-              "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80"
+              "/images/holiday1.png",
+              "/images/holiday2.png",
+              "/images/holiday3.png",
+              "/images/holiday7.png",
+              "/images/holiday9.png",
+              "/images/holiday11.png",
+              "/images/holiday10.png",
+              "/images/holiday12.png"
             ].map((src, index) => (
               <div key={index} className="relative h-64 rounded-xl overflow-hidden group cursor-pointer scroll-animate" style={{ animationDelay: `${index * 0.05}s` }}>
                 <Image
@@ -949,6 +1087,7 @@ export default function HolidaysPage() {
 
       <ContactSection />
       <Footer />
-    </div>
+      </div>
+    </PageTransition>
   )
 }
