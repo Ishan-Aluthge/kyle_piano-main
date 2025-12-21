@@ -35,21 +35,21 @@ export default function HolidaysPage() {
     {
       title: "Romantic Beach Escape",
       description: "Sunset walks, candlelight dinners, and private stays in stunning coastal hideaways",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
+      image: "/images/holiday13.png",
       price: "From $899",
       duration: "5 Days"
     },
     {
       title: "Mountain Bliss",
       description: "Misty mountains, tea plantations, and romantic hill country getaways",
-      image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+      image: "/images/holiday9.png",
       price: "From $799",
       duration: "4 Days"
     },
     {
       title: "Cultural Romance",
       description: "UNESCO heritage sites, ancient cities, and timeless temples",
-      image: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&q=80",
+      image: "/images/culture.png",
       price: "From $1,099",
       duration: "6 Days"
     },

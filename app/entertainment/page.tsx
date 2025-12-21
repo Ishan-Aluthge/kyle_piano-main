@@ -125,21 +125,21 @@ export default function EntertainmentPage() {
                 icon: <Mic2 className="w-12 h-12" />,
                 title: "Live Performers",
                 desc: "Talented singers, pianists, violinists, saxophonists, and guitarists. Customizable themes and genres.",
-                image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80",
+                image: "/images/liveperfome2.png",
                 features: ["Male & Female Singers", "Multiple Instruments", "Custom Themes"]
               },
               {
                 icon: <Radio className="w-12 h-12" />,
                 title: "Pro DJ Services",
                 desc: "High-energy DJs for parties, weddings, and corporate events with latest equipment.",
-                image: "https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?w=800&q=80",
+                image: "/images/DJ.png",
                 features: ["Latest Music", "Professional Equipment", "Event Coordination"]
               },
               {
                 icon: <Headphones className="w-12 h-12" />,
                 title: "Sound & Lighting",
                 desc: "State-of-the-art sound systems and lighting equipment with expert technicians.",
-                image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+                image: "/images/sounds1.png",
                 features: ["Modern Equipment", "Expert Engineers", "Full Setup"]
               },
               {
