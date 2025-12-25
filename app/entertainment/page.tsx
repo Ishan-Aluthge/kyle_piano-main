@@ -108,7 +108,7 @@ export default function EntertainmentPage() {
         </div>
       </section>
 
-      <section id="services" className="py-24 bg-gradient-to-b from-black via-gray-900 to-black">
+      <section id="services" className="py-24 bg-gradient-to-b from-black via-[#0a0a0a] to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-animate">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
@@ -232,7 +232,7 @@ export default function EntertainmentPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"

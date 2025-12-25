@@ -43,9 +43,9 @@ export function Navigation() {
         <div className="flex justify-between items-center h-20">
           <a href="/" className="flex-shrink-0 group cursor-pointer">
             <img
-              src="/images/logos_kyle_and_kylie_word.png"
+              src="/images/logos  kyle and kylie.png"
               alt="Kyle & Kylie"
-              className="h-8 w-auto group-hover:scale-110 transition-transform duration-300 brightness-0 invert"
+              className="h-16 w-auto group-hover:scale-110 transition-transform duration-300 brightness-0 invert"
             />
           </a>
 

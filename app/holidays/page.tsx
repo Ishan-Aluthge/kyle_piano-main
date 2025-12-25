@@ -117,7 +117,7 @@ export default function HolidaysPage() {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#045C5A] leading-tight mb-6">
-                Discover the Pearl of the Indian Ocean
+                From golden beaches to misty mountains
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
                 Experience Sri Lanka like never before with personalized tours crafted by local experts
@@ -253,7 +253,7 @@ export default function HolidaysPage() {
                     <Users className="w-8 h-8" />
                   </div>
                   <h3 className="font-bold text-2xl mb-3">Choose Your Travel Style</h3>
-                  <p className="text-white/80 mb-4">Whether you travel solo, as a couple, or in a group — the choice is entirely yours.</p>
+                  <p className="text-white/80 mb-4">Whether you travel solo, as a couple, or in a group - the choice is entirely yours.</p>
                   <ul className="space-y-2 text-sm text-white/70">
                     <li className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
@@ -315,7 +315,7 @@ export default function HolidaysPage() {
                     <Heart className="w-8 h-8" />
                   </div>
                   <h3 className="font-bold text-2xl mb-3">Pick Your Accommodation</h3>
-                  <p className="text-white/80 mb-4">From charming boutique hotels to luxurious beach resorts — stay your way.</p>
+                  <p className="text-white/80 mb-4">From charming boutique hotels to luxurious beach resorts - stay your way.</p>
                   <ul className="space-y-2 text-sm text-white/70">
                     <li className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[#8FB8B7]" />
@@ -535,7 +535,7 @@ export default function HolidaysPage() {
             
             <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl scroll-animate">
               <Image
-                src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=800&q=80"
+                src="/images/Your Journey, Your Way.png"
                 alt="Tour Guide"
                 fill
                 className="object-cover"
@@ -573,7 +573,7 @@ export default function HolidaysPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Island Discovery Solo Tour</h3>
                   <p className="text-gray-600 mb-4">
-                    A balanced journey through Sri Lanka's must-see destinations — Sigiriya, Kandy, Ella, and the southern beaches — crafted for solo explorers who want to see it all at their own pace.
+                    A balanced journey through Sri Lanka's must-see destinations Sigiriya, Kandy, Ella, and the southern beaches crafted for solo explorers who want to see it all at their own pace.
                   </p>
                   <a href="https://wa.me/94718661068?text=I'm interested in the Island Discovery Solo Tour" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
                     Learn More <ArrowRight className="w-4 h-4 ml-2" />
@@ -649,7 +649,7 @@ export default function HolidaysPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Coastal Freedom Escape</h3>
                   <p className="text-gray-600 mb-4">
-                    Travel along Sri Lanka's most beautiful beaches — Unawatuna, Mirissa, Arugam Bay, and Nilaveli. Perfect for sun-chasers and ocean lovers seeking a laid-back solo getaway.
+                    Travel along Sri Lanka's most beautiful beaches Unawatuna, Mirissa, Arugam Bay, and Nilaveli. Perfect for sun-chasers and ocean lovers seeking a laid-back solo getaway.
                   </p>
                   <a href="https://wa.me/94718661068?text=I'm interested in the Coastal Freedom Escape" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#045C5A] font-semibold hover:underline">
                     Learn More <ArrowRight className="w-4 h-4 ml-2" />
@@ -668,7 +668,7 @@ export default function HolidaysPage() {
                   </div>
                   <h3 className="text-2xl font-bold mb-4">Custom Solo Travel Experience</h3>
                   <p className="text-white/90 mb-4">
-                    Tell us your style — adventure, culture, relaxation, or a mix of everything — and we'll craft a personalized itinerary tailored just for you.
+                    Tell us your style adventure, culture, relaxation, or a mix of everything and we'll craft a personalized itinerary tailored just for you.
                   </p>
                   <a href="https://wa.me/94718661068?text=I want to create a custom solo travel experience" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-white font-semibold hover:underline">
                     Contact Us <ArrowRight className="w-4 h-4 ml-2" />
@@ -976,7 +976,7 @@ export default function HolidaysPage() {
             <blockquote className="text-2xl md:text-3xl italic font-serif mb-6 leading-relaxed">
               "An absolutely unforgettable experience! Lakmal's knowledge, warmth, and attention to detail made our Sri Lankan adventure perfect. Every moment was magical."
             </blockquote>
-            <p className="text-lg font-semibold text-[#8FB8B7]">— Sarah & Michael, Australia</p>
+            <p className="text-lg font-semibold text-[#8FB8B7]">Sarah & Michael, Australia</p>
             <div className="mt-8 pt-8 border-t border-white/20">
               <p className="text-white/90 text-lg mb-6">Join hundreds of satisfied travelers who've discovered the real Sri Lanka with us</p>
               <a
@@ -1002,7 +1002,7 @@ export default function HolidaysPage() {
           </div>
           
           <blockquote className="text-xl italic text-center leading-relaxed mb-8 scroll-animate">
-            "I'm Lakmal Weerakoon. I'm an authorized Sri Lankan tour driver and general guide with years of experience. After spending a long time working as an international musician, I discovered my true calling — sharing the beauty, culture, and hidden gems of Sri Lanka with travelers from around the world. My passion is creating unique, flexible, and personalized tours where every traveler feels comfortable, inspired, and deeply connected to the island. My only goal is your complete satisfaction and an unforgettable journey."
+            "I'm Lakmal Weerakoon. I'm an authorized Sri Lankan tour driver and general guide with years of experience. After spending a long time working as an international musician, I discovered my true calling sharing the beauty, culture, and hidden gems of Sri Lanka with travelers from around the world. My passion is creating unique, flexible, and personalized tours where every traveler feels comfortable, inspired, and deeply connected to the island. My only goal is your complete satisfaction and an unforgettable journey."
           </blockquote>
           
           <div className="text-center scroll-animate">

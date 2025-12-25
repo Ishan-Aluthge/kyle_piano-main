@@ -61,11 +61,16 @@ export default function Home() {
               </FadeIn>
               
               <AnimatedSection delay={0.2} direction="up">
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-6 tracking-tight">
-                  <span className="inline-block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-                    Kyle & Kylie
-                  </span>
-                </h1>
+                <div className="inline-block mb-6">
+                  <Image
+                    src="/images/logos_kyle_and_kylie_word_black.png"
+                    alt="Kyle & Kylie Logo"
+                    width={600}
+                    height={200}
+                    className="h-auto"
+                    priority
+                  />
+                </div>
               </AnimatedSection>
               
               <AnimatedSection delay={0.4} direction="up">
