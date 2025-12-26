@@ -60,6 +60,22 @@ export default function Home() {
                 </div>
               </FadeIn>
               
+              <FadeIn delay={0.15}>
+                <div className="flex justify-center mb-6">
+                  <div className="relative inline-block">
+                    {/* Main logo */}
+                    <img
+                      src="/images/logo-black.png"
+                      alt="Kyle & Kylie Logo Icon"
+                      className="relative h-16 sm:h-20 md:h-24 lg:h-32 w-auto hover:scale-110 transition-all duration-500 cursor-default drop-shadow-2xl"
+                      style={{
+                        filter: 'drop-shadow(0 0 30px rgba(0,0,0,0.3)) drop-shadow(0 0 60px rgba(0,0,0,0.2))'
+                      }}
+                    />
+                  </div>
+                </div>
+              </FadeIn>
+              
               <AnimatedSection delay={0.2} direction="up">
                 <div className="inline-block mb-6">
                   <Image

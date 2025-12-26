@@ -55,6 +55,20 @@ export default function EntertainmentPage() {
               Est. 1993 - 30+ Years of Excellence
             </div>
             
+            <div className="flex justify-center mb-6 sm:mb-8">
+              <div className="relative inline-block">
+                {/* Main logo */}
+                <img
+                  src="/images/logo-icon.png"
+                  alt="Kyle & Kylie Logo Icon"
+                  className="relative h-16 sm:h-20 md:h-24 lg:h-32 w-auto hover:scale-110 transition-all duration-500 cursor-default drop-shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 0 30px rgba(201,99,4,0.8)) drop-shadow(0 0 60px rgba(227,156,92,0.5)) drop-shadow(0 0 80px rgba(201,99,4,0.4))'
+                  }}
+                />
+              </div>
+            </div>
+            
             <img
               src="/images/logos_kyle_and_kylie_word.png"
               alt="Kyle & Kylie Entertainment"

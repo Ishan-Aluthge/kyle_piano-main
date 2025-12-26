@@ -231,36 +231,13 @@ export function HeroSection() {
         >
           <div className="flex justify-center mb-6 sm:mb-8">
             <div className="relative inline-block">
-              {/* Animated glow ring around logo */}
-              <div
-                className="absolute inset-0 rounded-full animate-pulse"
-                style={{
-                  background: 'radial-gradient(circle, rgba(255,249,229,0.4), transparent)',
-                  boxShadow: '0 0 40px rgba(255,249,229,0.8), 0 0 80px rgba(255,249,229,0.4), inset 0 0 40px rgba(255,255,255,0.2)',
-                  filter: 'blur(2px)',
-                  animationDuration: '2s'
-                }}
-              ></div>
-              
-              {/* Spinning border effect */}
-              <div
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: 'conic-gradient(from 0deg, rgba(255,249,229,0.8), rgba(255,255,255,0.6), rgba(255,249,229,0.8))',
-                  animation: 'spin 8s linear infinite',
-                  opacity: 0.6,
-                  padding: '2px'
-                }}
-              ></div>
-
               {/* Main logo */}
               <img
                 src="/images/logo_round.png"
                 alt="Kyle & Kylie Round Logo"
                 className="relative h-16 sm:h-20 md:h-24 lg:h-32 w-auto hover:scale-110 transition-all duration-500 cursor-default drop-shadow-2xl"
                 style={{
-                  filter: 'drop-shadow(0 0 30px rgba(255,249,229,0.8)) drop-shadow(0 0 60px rgba(255,255,255,0.5)) drop-shadow(0 0 80px rgba(255,249,229,0.4))',
-                  animation: 'pulse 2s ease-in-out infinite'
+                  filter: 'drop-shadow(0 0 30px rgba(255,249,229,0.8)) drop-shadow(0 0 60px rgba(255,255,255,0.5)) drop-shadow(0 0 80px rgba(255,249,229,0.4))'
                 }}
               />
             </div>
