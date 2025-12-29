@@ -28,11 +28,11 @@ export function ContactSection() {
   const contactInfo = [
     {
       icon: Phone,
-      label: "Phone",
+      label: "WhatsApp",
       value: "+94 71 866 1068",
-      href: "tel:+94718661068",
-      color: "from-rose-500 to-red-600",
-      bgGlow: "bg-rose-500/20"
+      href: "https://wa.me/94718661068?text=Hello%20Kyle%20%26%20Kylie",
+      color: "from-green-500 to-emerald-600",
+      bgGlow: "bg-green-500/20"
     },
     {
       icon: Mail,
@@ -92,8 +92,8 @@ export function ContactSection() {
             <a
               key={index}
               href={info.href}
-              target={info.icon === MapPin ? "_blank" : "_self"}
-              rel={info.icon === MapPin ? "noopener noreferrer" : undefined}
+              target={info.icon === MapPin || info.label === "WhatsApp" ? "_blank" : "_self"}
+              rel={info.icon === MapPin || info.label === "WhatsApp" ? "noopener noreferrer" : undefined}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               className={`group relative transition-all duration-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"

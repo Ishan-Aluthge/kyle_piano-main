@@ -76,11 +76,11 @@ body {
 }
 
 @theme inline {
-  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
   --font-mono: var(--font-geist-mono);
-  --font-bookman: "Bookman Old Style", "Times New Roman", serif;
-  --font-montserrat: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-bookman: "Cormorant Garamond", "Times New Roman", serif;
+  --font-montserrat: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
